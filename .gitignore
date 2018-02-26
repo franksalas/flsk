@@ -169,3 +169,10 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+# flask shares
+
+.idea/
+app.db
+migrations/
+
+
