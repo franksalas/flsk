@@ -9,6 +9,8 @@ from config import Config
 # set FLASK_APP= flsky.py
 
 # osx
+# export FLASK_APP=flsk.py
+
 
 app = Flask(__name__)
 app.config.from_object(Config)
