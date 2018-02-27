@@ -6,6 +6,8 @@ from config import Config
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
+from flask_mail import Mail
+
 
 
 # Windows
@@ -17,11 +19,17 @@ import os
 # debug
 # export FLASK_DEBUG=1
 
+# MAIL TEST
+
+# python -m smtpd -n -c DebuggingServer localhost:8025
+#  export MAIL_SERVER=localhost
+# export MAIL_PORT=8025
 
 app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+mail = Mail(app)
 login = LoginManager(app)
 login.login_view = 'login'
 
